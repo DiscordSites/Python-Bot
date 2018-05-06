@@ -31,7 +31,7 @@ class Core:
     async def guildscount(self, ctx):
         """Guilds count"""
         count = doc.count({})
-        await ctx.send(f"Found `{count}` documents in the `guilds` collection (of the `Isabel` database).")
+        await ctx.send(f"Found `{count}` documents in the `guilds` collection (of the `DiscordSites` database).")
 
     @commands.command()
     @commands.has_permissions(administrator=True)

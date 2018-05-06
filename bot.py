@@ -9,6 +9,8 @@ import json
 with open("config.json") as conf:
     config = json.load(conf)
     token = config["token"]
+    prefix = config["prefix"]
+    description = config["description"]
 
 client = MongoClient()
 db = client["discordsites"]
@@ -94,7 +96,7 @@ class Core:
                 pass
         return "#"
 
-bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or("~# "), description="DiscordSites.me")
+bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(prefix), description=description)
 
 @bot.event
 async def on_ready():

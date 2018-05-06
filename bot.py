@@ -102,4 +102,4 @@ async def on_ready():
     print("--------------------------------------------------")
 
 bot.add_cog(Core(bot))
-bot.run("")
+bot.run(token)

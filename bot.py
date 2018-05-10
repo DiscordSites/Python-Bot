@@ -10,9 +10,10 @@ with open("config.json") as conf:
     config = json.load(conf)
     token = config["token"]
     prefix = config["prefix"]
+    database = config["database"]
     description = config["description"]
 
-client = MongoClient()
+client = MongoClient(database)
 db = client["discordsites"]
 doc = db["guilds"]
 
